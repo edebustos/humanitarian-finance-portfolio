@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanitarian Finance Dashboard Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            relief: {
+              red: '#D71920',
+              deep: '#7A1116',
+              ink: '#24313F',
+              muted: '#697586',
+              line: '#D9DEE7',
+              field: '#F4F7FA',
+              amber: '#C87910',
+              green: '#2D8A62',
+              blue: '#2F6FA3'
+            }
+          },
+          boxShadow: {
+            panel: '0 10px 24px rgba(36, 49, 63, 0.08)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background:
+        linear-gradient(180deg, rgba(215, 25, 32, 0.045), transparent 260px),
+        #f4f7fa;
+    }
+
+    .chart-wrap {
+      position: relative;
+      height: 280px;
+    }
+
+    .chart-sm {
+      position: relative;
+      height: 230px;
+    }
+
+    @media (max-width: 768px) {
+      .chart-wrap,
+      .chart-sm {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen text-relief-ink antialiased">
+  <header class="border-b border-relief-line bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div class="flex items-start gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-relief-red text-3xl font-black leading-none text-white">+</div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-relief-red">Synthetic portfolio demo</p>
+          <h1 class="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">Humanitarian Finance & Operations Dashboard</h1>
+          <p class="mt-1 max-w-3xl text-sm text-relief-muted">Operational reporting view for multi-donor emergency response grants, field branches, cash assistance, and compliance follow-up.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2 text-sm sm:flex">
+        <div class="rounded border border-relief-line bg-relief-field px-3 py-2">
+          <p class="text-xs text-relief-muted">Reporting period</p>
+          <p class="font-semibold">Q2 2026</p>
+        </div>
+        <div class="rounded border border-relief-line bg-relief-field px-3 py-2">
+          <p class="text-xs text-relief-muted">Currency</p>
+          <p class="font-semibold">EUR</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl space-y-6 px-4 py-6 sm:px-6 lg:px-8">
+    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-7" aria-labelledby="executive-kpis">
+      <h2 id="executive-kpis" class="sr-only">Executive KPIs</h2>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Total Budget</p>
+        <p class="mt-3 text-2xl font-bold">EUR 18.6M</p>
+        <p class="mt-2 text-xs text-relief-green">92% secured</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Total Expenditure</p>
+        <p class="mt-3 text-2xl font-bold">EUR 11.8M</p>
+        <p class="mt-2 text-xs text-relief-muted">Posted to GL</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Burn Rate</p>
+        <p class="mt-3 text-2xl font-bold">63.4%</p>
+        <p class="mt-2 text-xs text-relief-amber">2 grants above plan</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Active Grants</p>
+        <p class="mt-3 text-2xl font-bold">14</p>
+        <p class="mt-2 text-xs text-relief-muted">6 donors</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Beneficiaries Reached</p>
+        <p class="mt-3 text-2xl font-bold">284K</p>
+        <p class="mt-2 text-xs text-relief-green">78% of target</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Branches Supported</p>
+        <p class="mt-3 text-2xl font-bold">37</p>
+        <p class="mt-2 text-xs text-relief-muted">12 priority branches</p>
+      </article>
+      <article class="rounded-lg border border-relief-line bg-white p-4 shadow-panel">
+        <p class="text-xs font-semibold uppercase tracking-wide text-relief-muted">Compliance Rate</p>
+        <p class="mt-3 text-2xl font-bold">94.2%</p>
+        <p class="mt-2 text-xs text-relief-green">Improved 3.1 pts</p>
+      </article>
+    </section>
+
+    <section class="grid gap-6 xl:grid-cols-3">
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel xl:col-span-2">
+        <div class="flex flex-col gap-2 border-b border-relief-line pb-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="text-lg font-bold">Budget vs Actual</h2>
+            <p class="text-sm text-relief-muted">Expenditure by operational sector against approved budget.</p>
+          </div>
+          <span class="w-fit rounded bg-red-50 px-3 py-1 text-xs font-semibold text-relief-deep">Variance watch: Shelter</span>
+        </div>
+        <div class="chart-wrap mt-5">
+          <canvas id="budgetActualChart"></canvas>
+        </div>
+      </article>
+
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">Burn Rate</h2>
+          <p class="text-sm text-relief-muted">Monthly expenditure pace against the operating plan.</p>
+        </div>
+        <div class="chart-sm mt-5">
+          <canvas id="burnRateChart"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">Donor Portfolio</h2>
+          <p class="text-sm text-relief-muted">Funding mix across anonymised donor categories.</p>
+        </div>
+        <div class="chart-sm mt-5">
+          <canvas id="donorChart"></canvas>
+        </div>
+      </article>
+
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">Beneficiary Reach</h2>
+          <p class="text-sm text-relief-muted">Cumulative people reached compared with quarterly target.</p>
+        </div>
+        <div class="chart-sm mt-5">
+          <canvas id="reachChart"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid gap-6 xl:grid-cols-5">
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel xl:col-span-3">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">CVA Operations</h2>
+          <p class="text-sm text-relief-muted">Cash and voucher assistance pipeline by transfer cycle.</p>
+        </div>
+        <div class="mt-5 overflow-x-auto">
+          <table class="w-full min-w-[620px] text-left text-sm">
+            <thead>
+              <tr class="border-b border-relief-line text-xs uppercase tracking-wide text-relief-muted">
+                <th class="py-3 pr-4 font-semibold">Transfer cycle</th>
+                <th class="px-4 py-3 font-semibold">Households</th>
+                <th class="px-4 py-3 font-semibold">Value</th>
+                <th class="px-4 py-3 font-semibold">Payment status</th>
+                <th class="py-3 pl-4 font-semibold">Post-distribution monitoring</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-relief-line">
+              <tr>
+                <td class="py-4 pr-4 font-semibold">Cycle 01 - Rapid relief</td>
+                <td class="px-4 py-4">18,420</td>
+                <td class="px-4 py-4">EUR 2.21M</td>
+                <td class="px-4 py-4"><span class="rounded bg-green-50 px-2 py-1 text-xs font-semibold text-relief-green">Completed</span></td>
+                <td class="py-4 pl-4">96% sampled</td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-4 font-semibold">Cycle 02 - Multipurpose cash</td>
+                <td class="px-4 py-4">22,870</td>
+                <td class="px-4 py-4">EUR 3.18M</td>
+                <td class="px-4 py-4"><span class="rounded bg-blue-50 px-2 py-1 text-xs font-semibold text-relief-blue">In progress</span></td>
+                <td class="py-4 pl-4">Fieldwork active</td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-4 font-semibold">Cycle 03 - Winter top-up</td>
+                <td class="px-4 py-4">14,300</td>
+                <td class="px-4 py-4">EUR 1.74M</td>
+                <td class="px-4 py-4"><span class="rounded bg-amber-50 px-2 py-1 text-xs font-semibold text-relief-amber">Validation</span></td>
+                <td class="py-4 pl-4">Pending transfer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel xl:col-span-2">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">Compliance Monitoring</h2>
+          <p class="text-sm text-relief-muted">Grant controls, reporting, and audit readiness indicators.</p>
+        </div>
+        <div class="mt-5 space-y-4">
+          <div>
+            <div class="mb-2 flex justify-between text-sm">
+              <span class="font-semibold">Supporting documents complete</span>
+              <span>97%</span>
+            </div>
+            <div class="h-2 rounded bg-relief-field"><div class="h-2 rounded bg-relief-green" style="width: 97%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex justify-between text-sm">
+              <span class="font-semibold">Procurement files reviewed</span>
+              <span>91%</span>
+            </div>
+            <div class="h-2 rounded bg-relief-field"><div class="h-2 rounded bg-relief-blue" style="width: 91%"></div></div>
+          </div>
+          <div>
+            <div class="mb-2 flex justify-between text-sm">
+              <span class="font-semibold">Donor reports submitted on time</span>
+              <span>89%</span>
+            </div>
+            <div class="h-2 rounded bg-relief-field"><div class="h-2 rounded bg-relief-amber" style="width: 89%"></div></div>
+          </div>
+          <div class="rounded border border-red-100 bg-red-50 p-4">
+            <p class="text-sm font-semibold text-relief-deep">Open actions</p>
+            <p class="mt-1 text-sm text-relief-muted">4 branch-level reconciliations and 2 procurement checklist updates due before month-end close.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid gap-6 lg:grid-cols-3">
+      <article class="rounded-lg border border-relief-line bg-white p-5 shadow-panel lg:col-span-2">
+        <div class="border-b border-relief-line pb-4">
+          <h2 class="text-lg font-bold">Operational Snapshot</h2>
+          <p class="text-sm text-relief-muted">Synthetic field finance indicators by response area.</p>
+        </div>
+        <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          <div class="rounded border border-relief-line bg-relief-field p-4">
+            <p class="text-xs uppercase tracking-wide text-relief-muted">Emergency response</p>
+            <p class="mt-2 text-xl font-bold">EUR 7.4M</p>
+            <p class="mt-1 text-sm text-relief-muted">68% burn rate</p>
+          </div>
+          <div class="rounded border border-relief-line bg-relief-field p-4">
+            <p class="text-xs uppercase tracking-wide text-relief-muted">Recovery support</p>
+            <p class="mt-2 text-xl font-bold">EUR 5.9M</p>
+            <p class="mt-1 text-sm text-relief-muted">54% burn rate</p>
+          </div>
+          <div class="rounded border border-relief-line bg-relief-field p-4">
+            <p class="text-xs uppercase tracking-wide text-relief-muted">Branch capacity</p>
+            <p class="mt-2 text-xl font-bold">EUR 1.6M</p>
+            <p class="mt-1 text-sm text-relief-muted">37 branches</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="rounded-lg border border-relief-line bg-relief-ink p-5 text-white shadow-panel">
+        <h2 class="text-lg font-bold">Management Focus</h2>
+        <ul class="mt-4 space-y-3 text-sm text-slate-100">
+          <li class="border-l-4 border-relief-red pl-3">Rephase shelter grant budget lines before next donor forecast.</li>
+          <li class="border-l-4 border-white pl-3">Close cash transfer reconciliations for three high-volume branches.</li>
+          <li class="border-l-4 border-relief-amber pl-3">Prioritise overdue procurement file reviews linked to fleet and NFI distribution.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-7xl px-4 pb-8 text-xs text-relief-muted sm:px-6 lg:px-8">
+    <p>Demo dashboard using synthetic and anonymised data only. Built for humanitarian finance and operations portfolio presentation.</p>
+  </footer>
+
+  <script>
+    const gridColor = '#D9DEE7';
+    const textColor = '#697586';
+    const red = '#D71920';
+    const deepRed = '#7A1116';
+    const blue = '#2F6FA3';
+    const green = '#2D8A62';
+    const amber = '#C87910';
+    const ink = '#24313F';
+
+    Chart.defaults.font.family = "'Inter', 'Segoe UI', Arial, sans-serif";
+    Chart.defaults.color = textColor;
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.tooltip.backgroundColor = ink;
+    Chart.defaults.plugins.tooltip.padding = 12;
+    Chart.defaults.plugins.tooltip.cornerRadius = 4;
+
+    new Chart(document.getElementById('budgetActualChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Health', 'Shelter', 'CVA', 'WASH', 'Logistics', 'Branch Support'],
+        datasets: [
+          {
+            label: 'Budget',
+            data: [4.2, 3.6, 4.8, 2.1, 2.4, 1.5],
+            backgroundColor: '#CBD5E1',
+            borderRadius: 4
+          },
+          {
+            label: 'Actual',
+            data: [2.8, 2.9, 3.4, 1.1, 1.0, 0.6],
+            backgroundColor: red,
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false }, ticks: { color: textColor } },
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'EUR millions' },
+            grid: { color: gridColor }
+          }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('burnRateChart'), {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Actual burn rate',
+            data: [9, 18, 31, 44, 55, 63],
+            borderColor: red,
+            backgroundColor: 'rgba(215, 25, 32, 0.12)',
+            fill: true,
+            tension: 0.35,
+            pointRadius: 4
+          },
+          {
+            label: 'Planned burn rate',
+            data: [8, 17, 27, 39, 51, 62],
+            borderColor: blue,
+            borderDash: [6, 5],
+            tension: 0.35,
+            pointRadius: 3
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true, max: 100, ticks: { callback: value => value + '%' }, grid: { color: gridColor } }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('donorChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Institutional', 'Movement partners', 'Government', 'Private foundation', 'Emergency appeal'],
+        datasets: [{
+          data: [34, 24, 18, 11, 13],
+          backgroundColor: [red, blue, green, amber, deepRed],
+          borderColor: '#FFFFFF',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '62%',
+        plugins: {
+          legend: { position: 'right' }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('reachChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Reached',
+            data: [28, 64, 113, 168, 226, 284],
+            backgroundColor: green,
+            borderRadius: 4
+          },
+          {
+            label: 'Target',
+            data: [45, 90, 140, 200, 285, 365],
+            type: 'line',
+            borderColor: ink,
+            borderDash: [5, 4],
+            pointRadius: 3,
+            tension: 0.25
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { grid: { display: false } },
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'People reached, thousands' },
+            grid: { color: gridColor }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
