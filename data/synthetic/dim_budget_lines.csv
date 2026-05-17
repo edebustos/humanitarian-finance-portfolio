@@ -1,0 +1,15 @@
+Budget_Line_ID,Budget_Category,Budget_Line,Cost_Type,Eligible_For_CVA,Compliance_Sensitivity
+BL001,Human Resources,National staff salaries,Direct,No,Medium
+BL002,Human Resources,International technical support,Direct,No,Medium
+BL003,Programme Supplies,Medical and programme supplies,Direct,No,High
+BL004,CVA Transfers,Unconditional cash transfers,Direct,Yes,High
+BL005,CVA Transfers,Winter cash top-up,Direct,Yes,High
+BL006,WASH Infrastructure,Water point rehabilitation,Direct,No,High
+BL007,Health Services,Primary health service support,Direct,No,High
+BL008,Logistics & Transport,Vehicle rental and fuel,Direct,No,Medium
+BL009,Training & Capacity Building,Branch and partner training,Direct,No,Medium
+BL010,Monitoring & Evaluation,PDM and field monitoring,Direct,No,Medium
+BL011,Administration,Office running costs,Support,No,Medium
+BL012,Audit & Compliance,External audit and compliance checks,Support,No,High
+BL013,Visibility,Visibility and communication materials,Direct,No,Medium
+BL014,Indirect Costs,Indirect cost recovery,Indirect,No,Low

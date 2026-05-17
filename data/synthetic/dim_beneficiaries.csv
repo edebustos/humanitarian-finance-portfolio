@@ -1,0 +1,8 @@
+Beneficiary_Group_ID,Sector,Modality,Target_Group,Unit_of_Assistance,Disaggregation_Required,Notes
+BG001,Health,In-kind,Conflict-affected patients,People,Yes,Patients supported through health facilities and referral pathways
+BG002,CVA,Cash,Refugee households,Households and people,Yes,Households receiving multipurpose cash assistance
+BG003,CVA,Cash,Winter-vulnerable households,Households and people,Yes,Households receiving seasonal winter cash support
+BG004,Food Security,Voucher,Food-insecure households,Households and people,Yes,Food assistance and livelihoods support
+BG005,WASH,In-kind,Communities with WASH needs,People,Yes,Water sanitation and hygiene infrastructure support
+BG006,Protection,Services,At-risk families,People,Yes,Referrals and safe access support
+BG007,Administration,Support,Mission and branch teams,Staff,No,Operational support not counted as direct beneficiary reach

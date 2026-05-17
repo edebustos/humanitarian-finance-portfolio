@@ -1,0 +1,11 @@
+Donor_ID,Donor_Name,Donor_Type,Default_Currency,Reporting_Frequency,Compliance_Focus
+D001,ECHO,Institutional,EUR,Quarterly,Eligibility documentation procurement and visibility
+D002,BMZ,Institutional,EUR,Quarterly,Budget variance reporting and audit trail
+D003,GFFO,Institutional,EUR,Monthly,Timely reporting and forecast accuracy
+D004,UNICEF,UN agency,USD,Monthly,Beneficiary reach and partner documentation
+D005,USAID,Institutional,USD,Quarterly,Procurement compliance and supporting documents
+D006,AECID,Institutional,EUR,Semi-annual,Grant reporting and visibility
+D007,EU Delegation,Institutional,EUR,Quarterly,Donor deadline risk and audit readiness
+D008,Red Cross Movement,Movement,CHF,Monthly,Operational reporting and branch documentation
+D009,Private Foundation,Private,USD,Quarterly,Outcome reporting and expenditure evidence
+D010,Own Funds,Internal,EUR,Annual,Internal control and reserve use

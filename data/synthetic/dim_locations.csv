@@ -1,0 +1,14 @@
+Location_ID,Country,Location,Branch_or_Base,Region,Latitude,Longitude,Operating_Context
+L001,Ukraine,Kyiv,Kyiv Base,Central,50.4501,30.5234,Capital coordination and health partner support
+L002,Ukraine,Lviv,Lviv Branch,West,49.8397,24.0297,Referral support and winter assistance
+L003,Ukraine,Dnipro,Dnipro Base,East,48.4647,35.0462,Frontline-adjacent health and CVA operations
+L004,Poland,Warsaw,Warsaw Branch,Central,52.2297,21.0122,Refugee assistance coordination
+L005,Poland,Krakow,Krakow Branch,South,50.0647,19.9450,CVA enrolment and referrals
+L006,Sudan,Khartoum,Khartoum Coordination,Central,15.5007,32.5599,Remote coordination and partner follow-up
+L007,Sudan,Port Sudan,Port Sudan Base,East,19.6158,37.2164,Operational hub and logistics
+L008,Sudan,North Darfur,El Fasher Base,Darfur,13.6279,25.3494,Food security and WASH delivery
+L009,Venezuela/Colombia,Caracas,Caracas Office,Venezuela,10.4806,-66.9036,Multi-donor finance coordination
+L010,Venezuela/Colombia,Bogota,Bogota Office,Colombia,4.7110,-74.0721,Regional donor and grant monitoring
+L011,Venezuela/Colombia,Cucuta,Cucuta Field Base,Border,7.8891,-72.4967,Cross-border response operations
+L012,Syria,Damascus,Damascus Mission Office,Central,33.5138,36.2765,Health mission support and administration
+L013,Syria,Aleppo,Aleppo Field Base,North,36.2021,37.1343,Health service support
