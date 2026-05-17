@@ -117,44 +117,20 @@
 
 
   <section id="dashboard" class="mb-16">
-    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Anonymised Finance & Operations Dashboard</h2>
-    <p class="text-center text-gray-700 max-w-4xl mx-auto mb-10">A portfolio-style dashboard built from anonymised extracts of real humanitarian financial reports and programme reports. It is designed to demonstrate budgeting, expenditure logic, donor reporting literacy, indicator tracking and management-level data visualisation without exposing confidential operational data.</p>
+    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Humanitarian Finance Dashboard Demo</h2>
+    <p class="text-center text-gray-700 max-w-4xl mx-auto mb-8">Synthetic humanitarian finance and operations dashboard inspired by real-world donor reporting, CVA operations and humanitarian programme monitoring.</p>
 
-    <div class="grid lg:grid-cols-4 gap-6 mb-8">
-      <div class="kpi-card p-6 rounded-2xl shadow-md"><p class="text-3xl font-black text-gray-900">€1.2M</p><p class="font-bold text-primary-red mt-2">EU-style budget sample</p><p class="text-sm text-gray-600 mt-2">Food security, livelihoods and WASH budget structure.</p></div>
-      <div class="kpi-card p-6 rounded-2xl shadow-md"><p class="text-3xl font-black text-gray-900">32,983</p><p class="font-bold text-primary-red mt-2">People assisted</p><p class="text-sm text-gray-600 mt-2">Ukraine HEALTH+ reporting period sample.</p></div>
-      <div class="kpi-card p-6 rounded-2xl shadow-md"><p class="text-3xl font-black text-gray-900">44,159</p><p class="font-bold text-primary-red mt-2">Health consultations</p><p class="text-sm text-gray-600 mt-2">Mobile Health Unit consultation volume.</p></div>
-      <div class="kpi-card p-6 rounded-2xl shadow-md"><p class="text-3xl font-black text-gray-900">2,210</p><p class="font-bold text-primary-red mt-2">Winter CVA recipients</p><p class="text-sm text-gray-600 mt-2">Emergency and HBC winter cash assistance.</p></div>
-    </div>
+    <div class="section-card p-4 md:p-6 border-t-4 border-primary-red">
+      <iframe
+        src="dashboard/humanitarian_finance_demo.html"
+        title="Humanitarian Finance Dashboard Demo"
+        class="w-full h-[720px] md:h-[900px] rounded-xl shadow-md border-0 bg-white"
+        loading="lazy">
+      </iframe>
 
-    <div class="grid lg:grid-cols-2 gap-8 mb-8">
-      <div class="section-card p-7">
-        <h3 class="text-2xl font-extrabold text-primary-red mb-2">Budget Structure — Anonymised EU Grant</h3>
-        <p class="text-sm text-gray-600 mb-5">Example of budget literacy: HR, equipment, office, audit, visibility, evaluation and field activity costs grouped for management review.</p>
-        <div class="chart-container"><canvas id="budgetStructureChart"></canvas></div>
-      </div>
-      <div class="section-card p-7">
-        <h3 class="text-2xl font-extrabold text-primary-red mb-2">Programme Progress — Ukraine HEALTH+ Snapshot</h3>
-        <p class="text-sm text-gray-600 mb-5">Indicator tracking against target values, including overachievement flags and implementation gaps.</p>
-        <div class="chart-container"><canvas id="healthProgressChart"></canvas></div>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-8">
-      <div class="section-card p-7 lg:col-span-1">
-        <h3 class="text-2xl font-extrabold text-primary-red mb-2">Beneficiary Profile</h3>
-        <p class="text-sm text-gray-600 mb-5">Directly assisted people by sex and age group.</p>
-        <div class="chart-container" style="height:300px"><canvas id="beneficiaryProfileChart"></canvas></div>
-      </div>
-      <div class="section-card p-7 lg:col-span-2">
-        <h3 class="text-2xl font-extrabold text-primary-red mb-5">What this dashboard demonstrates</h3>
-        <div class="grid md:grid-cols-2 gap-4 text-gray-700">
-          <div class="bg-gray-50 p-4 rounded-xl"><p class="font-black text-gray-900 mb-1">Financial management</p><p class="text-sm">Ability to read complex donor budgets, group cost categories and translate expenditure structures into management dashboards.</p></div>
-          <div class="bg-gray-50 p-4 rounded-xl"><p class="font-black text-gray-900 mb-1">Programme accountability</p><p class="text-sm">Capacity to link financial reporting, indicators, targets, beneficiary data and implementation status.</p></div>
-          <div class="bg-gray-50 p-4 rounded-xl"><p class="font-black text-gray-900 mb-1">CVA and field operations</p><p class="text-sm">Experience with winter cash assistance, vulnerability targeting, branch coordination and post-distribution monitoring logic.</p></div>
-          <div class="bg-gray-50 p-4 rounded-xl"><p class="font-black text-gray-900 mb-1">Digital trajectory</p><p class="text-sm">A credible basis for Power BI-style humanitarian finance dashboards, using anonymised Excel/reporting data.</p></div>
-        </div>
-        <p class="text-xs text-gray-500 mt-5">Note: dashboard values are intentionally aggregated and anonymised for portfolio presentation. They are intended to show analytical capability, not to disclose internal working files.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+        <a href="dashboard/humanitarian_finance_demo.html" class="inline-flex justify-center items-center bg-primary-red text-white py-3 px-5 rounded-lg font-bold hover:bg-primary-red-dark transition">Open Full Dashboard</a>
+        <a href="https://github.com/edebustos/humanitarian-finance-portfolio" target="_blank" rel="noopener" class="inline-flex justify-center items-center bg-white text-primary-red border border-primary-red py-3 px-5 rounded-lg font-bold hover:bg-primary-red hover:text-white transition">View Portfolio Repository</a>
       </div>
     </div>
   </section>
@@ -359,59 +335,6 @@
       datasets: [{ label: 'Approx. portfolio exposure (€M)', data: [11, 5, 1.6, 1.4, 1.65, 1.2, 3], backgroundColor: '#E03131', borderColor: '#C82D2D', borderWidth: 1 }]
     },
     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `Approx. €${c.parsed.y}M` } } }, scales: { y: { beginAtZero: true, title: { display: true, text: 'EUR millions' } } } }
-  });
-
-
-
-  new Chart(document.getElementById('budgetStructureChart').getContext('2d'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Human Resources', 'Equipment & Supplies', 'Field Activities / Other', 'Local Office', 'Other Costs & Services', 'Travel', 'Indirect Costs'],
-      datasets: [{
-        data: [475534, 308741, 137042, 99408, 87270, 13500, 78505],
-        backgroundColor: ['#E03131', '#242424', '#F97316', '#6B7280', '#9CA3AF', '#F4A3A3', '#FADCDC'],
-        borderWidth: 2,
-        borderColor: '#ffffff'
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'bottom' },
-        tooltip: { callbacks: { label: c => `${c.label}: €${Number(c.parsed).toLocaleString('en-US')}` } }
-      }
-    }
-  });
-
-  new Chart(document.getElementById('healthProgressChart').getContext('2d'), {
-    type: 'bar',
-    data: {
-      labels: ['MHU health care', 'HBC services', 'Winter cash', 'Relief items', 'Capacity strengthened'],
-      datasets: [
-        { label: 'Reached', data: [28536, 617, 1752, 2029, 49], backgroundColor: '#E03131' },
-        { label: 'Target', data: [34500, 435, 1800, 5000, 517], backgroundColor: '#D1D5DB' }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${Number(c.parsed.y).toLocaleString('en-US')}` } } },
-      scales: { y: { beginAtZero: true } }
-    }
-  });
-
-  new Chart(document.getElementById('beneficiaryProfileChart').getContext('2d'), {
-    type: 'pie',
-    data: {
-      labels: ['Women', 'Men', 'Girls', 'Boys'],
-      datasets: [{ data: [21245, 9225, 1268, 1245], backgroundColor: ['#E03131', '#242424', '#F4A3A3', '#FADCDC'], borderColor: '#ffffff', borderWidth: 2 }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: c => `${c.label}: ${Number(c.parsed).toLocaleString('en-US')}` } } }
-    }
   });
 
   new Chart(document.getElementById('languageChart').getContext('2d'), {
