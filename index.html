@@ -22,6 +22,11 @@
     .timeline-line { position: absolute; left: 50%; width: 4px; transform: translateX(-50%); height: 100%; background: #E03131; }
     .timeline-dot { position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; border-radius: 999px; background: #242424; border: 4px solid #fff; z-index: 2; }
     @media (max-width: 768px) { .timeline-line, .timeline-dot { display: none; } }
+    .field-card { border: 1px solid #e5e7eb; border-top: 5px solid #E03131; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .field-card:hover, .field-card.active { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(15,23,42,.13); border-color: #E03131; }
+    .field-card.active { outline: 3px solid rgba(224,49,49,.16); }
+    .map-panel { background: radial-gradient(circle at 18% 20%, rgba(224,49,49,.08), transparent 30%), linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%); }
+    .map-pin { position: absolute; width: 14px; height: 14px; border-radius: 999px; background: #E03131; border: 3px solid #fff; box-shadow: 0 0 0 4px rgba(224,49,49,.18); }
     .modal { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.72); display: flex; align-items: center; justify-content: center; padding: 1rem; }
     .modal-content { background: #fff; border-radius: 1rem; max-width: 850px; max-height: 90vh; overflow-y: auto; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,.25); }
     .close-button { position: absolute; top: 1rem; right: 1.25rem; font-size: 2rem; font-weight: 800; color: #9ca3af; cursor: pointer; }
@@ -33,9 +38,10 @@
 <header class="bg-primary-red text-white shadow-lg sticky top-0 z-50">
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <a href="#" class="text-xl md:text-2xl font-extrabold tracking-wide">Ernesto de Bustos</a>
-    <div class="hidden md:flex space-x-7 text-sm font-semibold">
+    <div class="hidden md:flex gap-4 lg:gap-7 text-xs lg:text-sm font-semibold">
       <a href="#profile" class="hover:text-gray-900 transition">Profile</a>
       <a href="#impact" class="hover:text-gray-900 transition">Impact</a>
+      <a href="#field-impact" class="hover:text-gray-900 transition">Field</a>
       <a href="#dashboard" class="hover:text-gray-900 transition">Dashboard</a>
       <a href="#evidence" class="hover:text-gray-900 transition">Evidence</a>
       <a href="#case-studies" class="hover:text-gray-900 transition">Case Studies</a>
@@ -49,6 +55,7 @@
   <div id="mobile-menu" class="hidden md:hidden bg-primary-red px-6 pb-4 space-y-2 font-semibold">
     <a href="#profile" class="block py-2">Profile</a>
     <a href="#impact" class="block py-2">Impact</a>
+    <a href="#field-impact" class="block py-2">Field</a>
     <a href="#dashboard" class="block py-2">Dashboard</a>
     <a href="#evidence" class="block py-2">Evidence</a>
     <a href="#case-studies" class="block py-2">Case Studies</a>
@@ -114,6 +121,106 @@
         <div class="grid sm:grid-cols-2 gap-3 text-gray-700 font-semibold">
           <p>• Budget monitoring & forecasting</p><p>• Donor compliance</p><p>• Financial reporting</p><p>• Audit preparedness</p><p>• CVA operations</p><p>• Partner capacity strengthening</p><p>• Field coordination</p><p>• Procurement & logistics follow-up</p><p>• HR/admin oversight</p><p>• Programme indicator monitoring</p></div>
       </div>
+    </div>
+  </section>
+
+  <section id="field-impact" class="mb-16">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Professional Impact & Field Experience</h2>
+    <p class="text-center text-gray-700 max-w-4xl mx-auto mb-10">Interactive field cards linking country experience to practical evidence: branch support, budget coordination, donor compliance, CVA operations and programme delivery.</p>
+
+    <div class="grid xl:grid-cols-5 gap-8 items-stretch">
+      <div class="xl:col-span-3 grid md:grid-cols-2 gap-5">
+        <button type="button" class="field-card active bg-white rounded-2xl p-6 text-left" data-field-card="ukraine" aria-pressed="true">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="text-sm font-black text-gray-500 uppercase tracking-wider">2023-2025</p>
+              <h3 class="text-2xl font-black text-gray-900">Ukraine</h3>
+            </div>
+            <span class="bg-primary-red text-white text-xs font-black px-3 py-1 rounded-full">Multi-donor</span>
+          </div>
+          <p class="text-gray-700 font-semibold mb-4">Multi-donor response support across national society branch operations.</p>
+          <div class="grid grid-cols-3 gap-2 text-center text-sm">
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">6</p><p class="text-gray-600">branches</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">€11M</p><p class="text-gray-600">master budget</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">3</p><p class="text-gray-600">years</p></div>
+          </div>
+        </button>
+
+        <button type="button" class="field-card bg-white rounded-2xl p-6 text-left" data-field-card="poland" aria-pressed="false">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="text-sm font-black text-gray-500 uppercase tracking-wider">2022-2023</p>
+              <h3 class="text-2xl font-black text-gray-900">Poland</h3>
+            </div>
+            <span class="bg-gray-900 text-white text-xs font-black px-3 py-1 rounded-full">CVA</span>
+          </div>
+          <p class="text-gray-700 font-semibold mb-4">Cash & Voucher Assistance operations for vulnerable Ukrainian refugee families.</p>
+          <div class="grid grid-cols-3 gap-2 text-center text-sm">
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">300</p><p class="text-gray-600">families</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">€1.6M</p><p class="text-gray-600">CVA</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">40-60</p><p class="text-gray-600">trained</p></div>
+          </div>
+        </button>
+
+        <button type="button" class="field-card bg-white rounded-2xl p-6 text-left" data-field-card="sudan" aria-pressed="false">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="text-sm font-black text-gray-500 uppercase tracking-wider">2016-2018</p>
+              <h3 class="text-2xl font-black text-gray-900">Sudan</h3>
+            </div>
+            <span class="bg-primary-red text-white text-xs font-black px-3 py-1 rounded-full">FSL</span>
+          </div>
+          <p class="text-gray-700 font-semibold mb-4">Food security, livelihoods and WASH implementation in Red Sea State.</p>
+          <div class="grid grid-cols-3 gap-2 text-center text-sm">
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">28</p><p class="text-gray-600">communities</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">€1.2M</p><p class="text-gray-600">EU action</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">3</p><p class="text-gray-600">years</p></div>
+          </div>
+        </button>
+
+        <button type="button" class="field-card bg-white rounded-2xl p-6 text-left" data-field-card="venezuela" aria-pressed="false">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="text-sm font-black text-gray-500 uppercase tracking-wider">2021</p>
+              <h3 class="text-2xl font-black text-gray-900">Venezuela / Colombia</h3>
+            </div>
+            <span class="bg-gray-900 text-white text-xs font-black px-3 py-1 rounded-full">Finance</span>
+          </div>
+          <p class="text-gray-700 font-semibold mb-4">Country finance coordination across border-area implementation bases.</p>
+          <div class="grid grid-cols-3 gap-2 text-center text-sm">
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">5</p><p class="text-gray-600">bases</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">4</p><p class="text-gray-600">donors</p></div>
+            <div class="bg-gray-50 rounded-lg p-3"><p class="text-xl font-black text-primary-red">5</p><p class="text-gray-600">finance team</p></div>
+          </div>
+        </button>
+      </div>
+
+      <aside class="xl:col-span-2 section-card p-7 border-t-4 border-primary-red">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+          <div>
+            <p id="field-detail-period" class="text-sm font-black text-gray-500 uppercase tracking-wider">2023-2025</p>
+            <h3 id="field-detail-title" class="text-3xl font-black text-gray-900">Ukraine - Multi-donor response support</h3>
+          </div>
+          <span id="field-detail-tag" class="self-start bg-primary-red text-white text-xs font-black px-3 py-1 rounded-full">Operational finance</span>
+        </div>
+
+        <div class="map-panel relative overflow-hidden rounded-2xl border border-gray-200 h-56 mb-6" aria-hidden="true">
+          <div class="absolute inset-x-6 top-1/2 h-px bg-gray-300"></div>
+          <div class="absolute inset-y-6 left-1/2 w-px bg-gray-300"></div>
+          <div id="field-map-pins"></div>
+          <div class="absolute left-5 bottom-5 bg-white/90 border border-gray-200 rounded-lg px-3 py-2 shadow-sm">
+            <p id="field-map-label" class="text-sm font-black text-gray-900">Kyiv plus six URCS branches</p>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-3 mb-6" id="field-detail-metrics"></div>
+
+        <div class="relative pl-6 border-l-4 border-primary-red">
+          <p class="absolute -left-[10px] top-1 w-4 h-4 rounded-full bg-gray-900 border-4 border-white"></p>
+          <h4 class="font-black text-primary-red mb-3">Evidence focus</h4>
+          <ul id="field-detail-evidence" class="space-y-2 text-gray-700 font-medium"></ul>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -316,6 +423,72 @@
   document.getElementById('open-cover-letter-modal').addEventListener('click', () => modal.classList.remove('hidden'));
   document.getElementById('close-cover-letter-modal').addEventListener('click', () => modal.classList.add('hidden'));
   modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+
+  const fieldImpactData = {
+    ukraine: {
+      period: '2023-2025',
+      title: 'Ukraine - Multi-donor response support',
+      tag: 'Operational finance',
+      mapLabel: 'Kyiv plus six URCS branches',
+      pins: [{ left: 60, top: 38 }, { left: 78, top: 54 }, { left: 54, top: 28 }, { left: 40, top: 44 }, { left: 24, top: 62 }, { left: 20, top: 72 }],
+      metrics: [['6', 'supported branches'], ['€11M', 'master budget'], ['3 years', 'planning horizon']],
+      evidence: ['Branch support across Donetsk, Zaporizhzhia, Chernihiv, Lviv, Zakarpattia and Chernivtsi.', 'Integrated master budget coordination for seasonal CVA, trainings, branch support and emergency response activities.', 'Donor reporting, forecasting and proposal inputs with Austrian Red Cross and URCS finance colleagues.']
+    },
+    poland: {
+      period: '2022-2023',
+      title: 'Poland - Cash & Voucher Assistance operations',
+      tag: 'CVA implementation',
+      mapLabel: 'Lublin-based refugee response',
+      pins: [{ left: 58, top: 46 }, { left: 51, top: 38 }, { left: 65, top: 56 }],
+      metrics: [['300', 'vulnerable families'], ['€1.6M', 'CVA operation'], ['40-60', 'volunteers trained/session']],
+      evidence: ['Volunteer coordination for distribution cycles involving 10-15 volunteers.', 'Branch training through larger hubs serving smaller Polish Red Cross branches.', 'RedRose procurement and CVA implementation support with IFRC, local authorities and humanitarian stakeholders.']
+    },
+    sudan: {
+      period: '2016-2018',
+      title: 'Sudan - Food security and livelihoods',
+      tag: 'Programme delivery',
+      mapLabel: 'Red Sea State programme area',
+      pins: [{ left: 60, top: 46 }, { left: 66, top: 54 }, { left: 55, top: 58 }, { left: 70, top: 42 }],
+      metrics: [['28', 'rural communities'], ['€1.2M', 'EU-funded action'], ['3 years', 'extended programme']],
+      evidence: ['Programme implementation across food security, livelihoods, WASH, gender and community capacity building.', 'Budget management, procurement follow-up, audits, EU reporting and project closure.', 'Humanitarian coordination with Sudanese Red Crescent, local ministries and EU Delegation requirements.']
+    },
+    venezuela: {
+      period: '2021',
+      title: 'Venezuela / Colombia - Country finance coordination',
+      tag: 'Donor compliance',
+      mapLabel: 'Cross-border base support',
+      pins: [{ left: 38, top: 52 }, { left: 44, top: 45 }, { left: 48, top: 58 }, { left: 56, top: 50 }, { left: 62, top: 43 }],
+      metrics: [['5', 'bases supported'], ['4', 'donor frameworks'], ['5', 'finance team members']],
+      evidence: ['Country finance coordination across San Cristobal, Merida, Guasdualito, Cucuta and Arauca.', 'Donor compliance and documentation control for ECHO, USAID, UNICEF and Stichting Vluchteling funding.', 'Multi-base support covering bank accounts, petty cash, reconciliations, budget monitoring and HR/admin processes.']
+    }
+  };
+
+  const fieldCards = document.querySelectorAll('[data-field-card]');
+  const fieldPeriod = document.getElementById('field-detail-period');
+  const fieldTitle = document.getElementById('field-detail-title');
+  const fieldTag = document.getElementById('field-detail-tag');
+  const fieldMapLabel = document.getElementById('field-map-label');
+  const fieldPins = document.getElementById('field-map-pins');
+  const fieldMetrics = document.getElementById('field-detail-metrics');
+  const fieldEvidence = document.getElementById('field-detail-evidence');
+
+  function renderFieldImpact(key) {
+    const item = fieldImpactData[key];
+    fieldPeriod.textContent = item.period;
+    fieldTitle.textContent = item.title;
+    fieldTag.textContent = item.tag;
+    fieldMapLabel.textContent = item.mapLabel;
+    fieldPins.innerHTML = item.pins.map(pin => `<span class="map-pin" style="left:${pin.left}%;top:${pin.top}%"></span>`).join('');
+    fieldMetrics.innerHTML = item.metrics.map(([value, label]) => `<div class="bg-gray-50 rounded-lg p-3 text-center"><p class="text-2xl font-black text-primary-red">${value}</p><p class="text-xs font-bold text-gray-600 uppercase tracking-wide">${label}</p></div>`).join('');
+    fieldEvidence.innerHTML = item.evidence.map(text => `<li>${text}</li>`).join('');
+    fieldCards.forEach(card => {
+      const active = card.dataset.fieldCard === key;
+      card.classList.toggle('active', active);
+      card.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+  fieldCards.forEach(card => card.addEventListener('click', () => renderFieldImpact(card.dataset.fieldCard)));
+  renderFieldImpact('ukraine');
 
   const experienceData = [
     { region: 'Middle East', dates: '26/03/2025-11/04/2025', role: 'Surge Finance Delegate', org: 'German Red Cross', location: 'Ramallah, Palestinian Territories', details: ['Supported final financial reporting processes for GFFO, BMZ and ECHO-funded operations.', 'Verified supporting documentation, expenditure evidence and payment statements for donor reporting.', 'Prepared financial information for HQ submission under tight reporting deadlines.'] },
