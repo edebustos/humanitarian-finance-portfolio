@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Demo | Ernesto de Bustos</title>
+  <meta name="description" content="Interactive humanitarian finance dashboard demo using synthetic donor, CVA and operations data." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1f2937; }
+    .bg-primary-red { background-color: #E03131; }
+    .text-primary-red { color: #E03131; }
+    .border-primary-red { border-color: #E03131; }
+    .hover\:bg-primary-red-dark:hover { background-color: #C82D2D; }
+    .section-card { background: #fff; border-radius: .75rem; box-shadow: 0 10px 25px rgba(15,23,42,.08); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="bg-primary-red text-white shadow-lg sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="../index.html" class="text-xl md:text-2xl font-extrabold tracking-wide">Ernesto de Bustos</a>
+    <div class="hidden md:flex gap-5 lg:gap-7 text-sm font-semibold">
+      <a href="profile.html" class="hover:text-gray-900 transition">Profile & Experience</a><a href="dashboard.html" class="text-gray-900">Dashboard</a><a href="powerbi.html" class="hover:text-gray-900 transition">Power BI</a><a href="projects.html" class="hover:text-gray-900 transition">Projects</a><a href="#contact" class="hover:text-gray-900 transition">Contact</a>
+    </div>
+    <button id="mobile-menu-button" class="md:hidden text-3xl leading-none font-bold" aria-label="Open mobile menu">☰</button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-primary-red px-6 pb-4 space-y-2 font-semibold">
+    <a href="profile.html" class="block py-2">Profile & Experience</a><a href="dashboard.html" class="block py-2">Dashboard</a><a href="powerbi.html" class="block py-2">Power BI</a><a href="projects.html" class="block py-2">Projects</a><a href="#contact" class="block py-2">Contact</a>
+  </div>
+</header>
+
+<main class="container mx-auto px-6 py-12 max-w-7xl">
+  <section class="mb-10 text-center">
+    <p class="uppercase tracking-[.25em] text-primary-red font-extrabold text-sm mb-4">Dashboard Demo</p>
+    <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Humanitarian Finance Dashboard Demo</h1>
+    <p class="text-gray-700 max-w-4xl mx-auto">Synthetic humanitarian finance and operations dashboard inspired by real-world donor reporting, CVA operations and humanitarian programme monitoring.</p>
+  </section>
+
+  <section class="section-card p-4 md:p-6 border-t-4 border-primary-red mb-10">
+    <iframe src="../dashboard/humanitarian_finance_demo.html" title="Humanitarian Finance Dashboard Demo" class="w-full h-[720px] md:h-[900px] rounded-xl shadow-md border-0 bg-white" loading="lazy"></iframe>
+    <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+      <a href="../dashboard/humanitarian_finance_demo.html" class="inline-flex justify-center items-center bg-primary-red text-white py-3 px-5 rounded-lg font-bold hover:bg-primary-red-dark transition">Open Full Dashboard</a>
+      <a href="powerbi.html" class="inline-flex justify-center items-center bg-white text-primary-red border border-primary-red py-3 px-5 rounded-lg font-bold hover:bg-primary-red hover:text-white transition">View Power BI Pack</a>
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-3 gap-6">
+    <article class="section-card p-6"><h2 class="text-xl font-black text-primary-red mb-3">Decision Support</h2><p class="text-gray-700">Designed for executive review of budget burn rate, donor exposure, CVA activity and operational risk indicators.</p></article>
+    <article class="section-card p-6"><h2 class="text-xl font-black text-primary-red mb-3">Data Ethics</h2><p class="text-gray-700">All dashboard views and datasets are anonymised and/or synthetic, preserving humanitarian confidentiality while showing realistic workflows.</p></article>
+    <article class="section-card p-6"><h2 class="text-xl font-black text-primary-red mb-3">Recruiter Use</h2><p class="text-gray-700">The demo shows practical reporting judgement, not only technical charting: what risks matter, who needs the information, and what decisions the data supports.</p></article>
+  </section>
+</main>
+
+<footer id="contact" class="bg-primary-red text-white"><div class="container mx-auto px-6 py-10 text-center"><h2 class="text-3xl font-black mb-3">Get In Touch</h2><p class="mb-6 text-red-50">Available for senior humanitarian finance, operations, CVA and programme support roles.</p><div class="flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-semibold"><a href="mailto:edebustos@duck.com" class="hover:text-gray-900 transition">edebustos@duck.com</a><span class="hidden md:block">•</span><a href="https://www.linkedin.com/in/ernesto-de-bustos-136662233/" target="_blank" rel="noopener" class="hover:text-gray-900 transition">LinkedIn</a><span class="hidden md:block">•</span><a href="https://github.com/edebustos" target="_blank" rel="noopener" class="hover:text-gray-900 transition">GitHub</a><span class="hidden md:block">•</span><p>(+34) 692793157</p></div></div></footer>
+<script>document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));</script>
+</body>
+</html>

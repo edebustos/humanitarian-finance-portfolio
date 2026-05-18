@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ernesto de Bustos</title>
+  <meta name="description" content="Selected humanitarian finance, CVA, donor compliance and analytics projects for Ernesto de Bustos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1f2937; }
+    .bg-primary-red { background-color: #E03131; }
+    .text-primary-red { color: #E03131; }
+    .border-primary-red { border-color: #E03131; }
+    .hover\:bg-primary-red-dark:hover { background-color: #C82D2D; }
+    .section-card { background: #fff; border-radius: .75rem; box-shadow: 0 10px 25px rgba(15,23,42,.08); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="bg-primary-red text-white shadow-lg sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="../index.html" class="text-xl md:text-2xl font-extrabold tracking-wide">Ernesto de Bustos</a>
+    <div class="hidden md:flex gap-5 lg:gap-7 text-sm font-semibold"><a href="profile.html" class="hover:text-gray-900 transition">Profile & Experience</a><a href="dashboard.html" class="hover:text-gray-900 transition">Dashboard</a><a href="powerbi.html" class="hover:text-gray-900 transition">Power BI</a><a href="projects.html" class="text-gray-900">Projects</a><a href="#contact" class="hover:text-gray-900 transition">Contact</a></div>
+    <button id="mobile-menu-button" class="md:hidden text-3xl leading-none font-bold" aria-label="Open mobile menu">☰</button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-primary-red px-6 pb-4 space-y-2 font-semibold"><a href="profile.html" class="block py-2">Profile & Experience</a><a href="dashboard.html" class="block py-2">Dashboard</a><a href="powerbi.html" class="block py-2">Power BI</a><a href="projects.html" class="block py-2">Projects</a><a href="#contact" class="block py-2">Contact</a></div>
+</header>
+
+<main class="container mx-auto px-6 py-12 max-w-7xl">
+  <section class="mb-10 text-center">
+    <p class="uppercase tracking-[.25em] text-primary-red font-extrabold text-sm mb-4">Evidence & Case Studies</p>
+    <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Selected Humanitarian Projects & Analytics Evidence</h1>
+    <p class="text-gray-700 max-w-4xl mx-auto">A concise set of portfolio evidence linking humanitarian finance, operations, CVA and analytics work to practical reviewable outputs.</p>
+  </section>
+
+  <section class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-14">
+    <article class="section-card p-6 border-t-4 border-primary-red flex flex-col"><p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">Dashboard demo</p><h2 class="text-xl font-black text-gray-900 mb-3">Humanitarian Finance Dashboard</h2><p class="text-gray-700 leading-relaxed flex-1">Synthetic donor finance, compliance and operational reporting dashboard.</p><a href="dashboard.html" class="mt-6 inline-flex justify-center items-center bg-primary-red text-white py-3 px-4 rounded-lg font-bold hover:bg-primary-red-dark transition">Open dashboard</a></article>
+    <article class="section-card p-6 border-t-4 border-primary-red flex flex-col"><p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">Power BI</p><h2 class="text-xl font-black text-gray-900 mb-3">Power BI Humanitarian Analytics</h2><p class="text-gray-700 leading-relaxed">Power BI dashboard using synthetic humanitarian datasets inspired by finance, CVA and donor environments.</p><img src="../assets/screenshots/powerbi_preview.png" alt="Power BI humanitarian analytics preview" class="mt-6 w-full rounded-lg border border-gray-200 bg-gray-50 object-cover shadow-sm" loading="lazy"></article>
+    <article class="section-card p-6 border-t-4 border-primary-red flex flex-col"><p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">CVA operations</p><h2 class="text-xl font-black text-gray-900 mb-3">Cash & Voucher Assistance Operations</h2><p class="text-gray-700 leading-relaxed flex-1">Branch support, volunteer training and CVA implementation examples from Poland and Ukraine contexts.</p><a href="profile.html#experience-summary" class="mt-6 text-primary-red font-bold hover:underline">Review field evidence</a></article>
+    <article class="section-card p-6 border-t-4 border-primary-red flex flex-col"><p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">Budget management</p><h2 class="text-xl font-black text-gray-900 mb-3">Multi-Donor Budget Management</h2><p class="text-gray-700 leading-relaxed flex-1">Master budget consolidation, forecasting and donor compliance examples.</p><a href="profile.html#experience-summary" class="mt-6 text-primary-red font-bold hover:underline">Review experience summary</a></article>
+  </section>
+
+  <section class="mb-14">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Selected Humanitarian Case Studies</h2>
+    <p class="text-center text-gray-700 max-w-3xl mx-auto mb-10">Examples of complex assignments combining finance, programme delivery, branch coordination, donor accountability and field-level implementation.</p>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <article class="section-card p-7 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">Ukraine response</p>
+        <h3 class="text-2xl font-black text-gray-900 mb-3">Austrian Red Cross — Integrated Master Budget</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Supported a consolidated multi-donor master budget of approximately €11M over three years, with €7M concentrated in the first two years. The structure integrated operational components such as seasonal CVA, trainings and branch support into one financial management framework.</p>
+        <ul class="text-sm text-gray-700 space-y-2 font-medium"><li>• Branch support: Donetsk, Zaporizhzhia, Chernihiv, Lviv, Zakarpattia and Chernivtsi.</li><li>• Main donors: Neighbour in Need and Austrian Development Agency.</li><li>• Team interface: one officer directly supervised plus two URCS finance colleagues.</li></ul>
+      </article>
+      <article class="section-card p-7 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">CVA / Poland</p>
+        <h3 class="text-2xl font-black text-gray-900 mb-3">German Red Cross — Ukraine Refugee Response</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Supported a €1.6M CVA operation for 300 vulnerable families, prioritising older couples with chronic diseases, single mothers with two or more children and people with chronic health conditions.</p>
+        <ul class="text-sm text-gray-700 space-y-2 font-medium"><li>• RedRose CVA platform procurement and operational setup.</li><li>• 10–15 volunteers mobilised per distribution cycle.</li><li>• CVA trainings for 40–60 volunteers per session in larger branch hubs.</li></ul>
+      </article>
+      <article class="section-card p-7 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">Sudan / EU food security</p>
+        <h3 class="text-2xl font-black text-gray-900 mb-3">Spanish Red Cross — Food Security, WASH & Livelihoods</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">Managed programme follow-up, EU reporting, procurement processes, audits and closure of a multi-sector operation in Red Sea State combining food security, livelihoods, WASH, gender and community capacity building.</p>
+        <ul class="text-sm text-gray-700 space-y-2 font-medium"><li>• €1.2M EU-funded action over a programme extended to three years.</li><li>• 28 rural communities in Jebet al Maaden.</li><li>• Additional Diputación de Jaén contribution for complementary activities.</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-card p-7 md:p-9 border-l-4 border-primary-red">
+    <h2 class="text-2xl font-black text-gray-900 mb-4">Repository Evidence</h2>
+    <p class="text-gray-700 mb-5">The public portfolio repository remains available for technical inspection, including dashboard documentation, synthetic datasets, Power BI notes and project roadmap materials.</p>
+    <a href="https://github.com/edebustos/humanitarian-finance-portfolio" target="_blank" rel="noopener" class="inline-flex justify-center items-center bg-primary-red text-white py-3 px-5 rounded-lg font-bold hover:bg-primary-red-dark transition">View Portfolio Repository</a>
+  </section>
+</main>
+
+<footer id="contact" class="bg-primary-red text-white"><div class="container mx-auto px-6 py-10 text-center"><h2 class="text-3xl font-black mb-3">Get In Touch</h2><p class="mb-6 text-red-50">Available for senior humanitarian finance, operations, CVA and programme support roles.</p><div class="flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-semibold"><a href="mailto:edebustos@duck.com" class="hover:text-gray-900 transition">edebustos@duck.com</a><span class="hidden md:block">•</span><a href="https://www.linkedin.com/in/ernesto-de-bustos-136662233/" target="_blank" rel="noopener" class="hover:text-gray-900 transition">LinkedIn</a><span class="hidden md:block">•</span><a href="https://github.com/edebustos" target="_blank" rel="noopener" class="hover:text-gray-900 transition">GitHub</a><span class="hidden md:block">•</span><p>(+34) 692793157</p></div></div></footer>
+<script>document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));</script>
+</body>
+</html>

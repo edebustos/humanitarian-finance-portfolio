@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Ernesto de Bustos</title>
+  <meta name="description" content="Professional profile, skills, education and humanitarian finance positioning for Ernesto de Bustos." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1f2937; }
+    .bg-primary-red { background-color: #E03131; }
+    .text-primary-red { color: #E03131; }
+    .border-primary-red { border-color: #E03131; }
+    .hover\:bg-primary-red-dark:hover { background-color: #C82D2D; }
+    .section-card { background: #fff; border-radius: .75rem; box-shadow: 0 10px 25px rgba(15,23,42,.08); }
+    .chart-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto; height: 340px; max-height: 420px; }
+    @media (max-width: 768px) { .chart-container { height: 300px; } }
+    .modal { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.72); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .modal-content { background: #fff; border-radius: .75rem; max-width: 850px; max-height: 90vh; overflow-y: auto; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,.25); }
+    .close-button { position: absolute; top: 1rem; right: 1.25rem; font-size: 2rem; font-weight: 800; color: #9ca3af; cursor: pointer; }
+    .close-button:hover { color: #E03131; }
+  </style>
+</head>
+<body class="antialiased">
+
+<header class="bg-primary-red text-white shadow-lg sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="../index.html" class="text-xl md:text-2xl font-extrabold tracking-wide">Ernesto de Bustos</a>
+    <div class="hidden md:flex gap-5 lg:gap-7 text-sm font-semibold">
+      <a href="profile.html" class="text-gray-900">Profile & Experience</a>
+      <a href="dashboard.html" class="hover:text-gray-900 transition">Dashboard</a>
+      <a href="powerbi.html" class="hover:text-gray-900 transition">Power BI</a>
+      <a href="projects.html" class="hover:text-gray-900 transition">Projects</a>
+      <a href="#contact" class="hover:text-gray-900 transition">Contact</a>
+    </div>
+    <button id="mobile-menu-button" class="md:hidden text-3xl leading-none font-bold" aria-label="Open mobile menu">☰</button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-primary-red px-6 pb-4 space-y-2 font-semibold">
+    <a href="profile.html" class="block py-2">Profile & Experience</a>
+    <a href="dashboard.html" class="block py-2">Dashboard</a>
+    <a href="powerbi.html" class="block py-2">Power BI</a>
+    <a href="projects.html" class="block py-2">Projects</a>
+    <a href="#contact" class="block py-2">Contact</a>
+  </div>
+</header>
+
+<main class="container mx-auto px-6 py-12 max-w-7xl">
+  <section class="section-card p-8 md:p-12 mb-14">
+    <div class="grid lg:grid-cols-3 gap-10 items-center">
+      <div class="lg:col-span-2">
+        <p class="uppercase tracking-[.25em] text-primary-red font-extrabold text-sm mb-4">Profile & Experience</p>
+        <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-5">Humanitarian Finance & Operations Manager</h1>
+        <div class="space-y-4 text-gray-700 text-lg leading-relaxed max-w-4xl">
+          <p>Humanitarian finance and operations professional with 15+ years of experience across conflict, emergency and recovery contexts including Ukraine, Sudan, Syria, Venezuela, Colombia, Ethiopia, Palestine and Poland.</p>
+          <p>Strong Red Cross Movement and INGO background combining multi-million-euro budget exposure, donor compliance, CVA operations, field coordination, partner support, ERP literacy, financial reporting and programme delivery.</p>
+          <p>Positioned for senior roles bridging humanitarian finance, operational management, donor accountability, programme support and data-driven decision-making.</p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">Humanitarian Finance</span>
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">Operations</span>
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">Donor Compliance</span>
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">CVA</span>
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">Ukraine Response</span>
+          <span class="bg-primary-red text-white px-4 py-2 rounded-full text-sm font-bold">Red Cross Movement</span>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#experience-summary" class="inline-flex justify-center items-center bg-white text-primary-red border border-primary-red py-3 px-5 rounded-lg font-bold hover:bg-primary-red hover:text-white transition">Experience Summary</a>
+          <a href="#skills" class="inline-flex justify-center items-center bg-white text-primary-red border border-primary-red py-3 px-5 rounded-lg font-bold hover:bg-primary-red hover:text-white transition">Skills & Languages</a>
+          <a href="#education" class="inline-flex justify-center items-center bg-white text-primary-red border border-primary-red py-3 px-5 rounded-lg font-bold hover:bg-primary-red hover:text-white transition">Education</a>
+        </div>
+      </div>
+      <div class="bg-gray-900 text-white rounded-xl p-7 shadow-xl">
+        <h2 class="text-2xl font-extrabold mb-5">Core Positioning</h2>
+        <ul class="space-y-4 text-gray-200">
+          <li><strong class="text-white">Finance:</strong> budgeting, BFU, forecasting, reporting, audit readiness.</li>
+          <li><strong class="text-white">Operations:</strong> field coordination, branch support, HR/admin, procurement.</li>
+          <li><strong class="text-white">Programmes:</strong> CVA, food security, livelihoods, WASH, recovery.</li>
+          <li><strong class="text-white">Systems:</strong> Dynamics 365, Agresso, Odoo, FundsPro, RedRose, Power BI trajectory.</li>
+        </ul>
+        <button id="open-cover-letter-modal" class="mt-7 w-full bg-primary-red text-white py-3 px-5 rounded-lg font-bold hover:bg-primary-red-dark transition">Professional Approach</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience-summary" class="mb-14">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Experience Summary</h2>
+    <p class="text-center text-gray-700 max-w-4xl mx-auto mb-10">A recruiter-friendly snapshot of the international field trajectory. The detailed interactive timeline remains available from the legacy experience link.</p>
+    <div class="grid lg:grid-cols-4 gap-6">
+      <article class="section-card p-6 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">2023-2025</p>
+        <h3 class="text-xl font-black text-gray-900 mb-3">Ukraine Response</h3>
+        <p class="text-gray-700">Multi-donor response support, branch coordination, €11M master budget exposure and donor reporting inputs.</p>
+      </article>
+      <article class="section-card p-6 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">2022-2023</p>
+        <h3 class="text-xl font-black text-gray-900 mb-3">Poland CVA</h3>
+        <p class="text-gray-700">€1.6M Cash & Voucher Assistance operation for vulnerable Ukrainian refugee families, RedRose setup and volunteer training.</p>
+      </article>
+      <article class="section-card p-6 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">2016-2021</p>
+        <h3 class="text-xl font-black text-gray-900 mb-3">Finance & Programme Leadership</h3>
+        <p class="text-gray-700">Finance coordination in Venezuela/Colombia, country administration in Syria and food security/WASH programme delivery in Sudan.</p>
+      </article>
+      <article class="section-card p-6 border-t-4 border-primary-red">
+        <p class="text-sm font-black text-gray-500 uppercase tracking-wider mb-2">2007-2015</p>
+        <h3 class="text-xl font-black text-gray-900 mb-3">Development & Institutional Work</h3>
+        <p class="text-gray-700">Food security in Ethiopia, EU-funded innovation work in Peru and institutional economic analysis in Ukraine.</p>
+      </article>
+    </div>
+    <div class="mt-7 text-center">
+      <a href="experience.html" class="inline-flex justify-center items-center bg-primary-red text-white py-3 px-5 rounded-lg font-bold hover:bg-primary-red-dark transition">Open Detailed Timeline</a>
+    </div>
+  </section>
+
+  <section class="mb-14">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-4">Portfolio Scale & Operational Impact</h2>
+    <p class="text-center text-gray-700 max-w-3xl mx-auto mb-10">A quantified view of senior humanitarian finance, operations and programme exposure across Red Cross Movement and INGO assignments.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="section-card p-6 border-t-4 border-primary-red"><p class="text-4xl font-black text-gray-900">€25M+</p><p class="font-bold text-primary-red mt-2">Portfolio exposure</p><p class="text-sm text-gray-600 mt-2">Multi-donor humanitarian and development budgets across career assignments.</p></div>
+      <div class="section-card p-6 border-t-4 border-primary-red"><p class="text-4xl font-black text-gray-900">15+</p><p class="font-bold text-primary-red mt-2">Years</p><p class="text-sm text-gray-600 mt-2">Field, finance, programme and operations experience.</p></div>
+      <div class="section-card p-6 border-t-4 border-primary-red"><p class="text-4xl font-black text-gray-900">8</p><p class="font-bold text-primary-red mt-2">Countries</p><p class="text-sm text-gray-600 mt-2">Ukraine, Poland, Palestine, Sudan, Syria, Ethiopia, Venezuela/Colombia and Peru.</p></div>
+      <div class="section-card p-6 border-t-4 border-primary-red"><p class="text-4xl font-black text-gray-900">10+</p><p class="font-bold text-primary-red mt-2">Donor frameworks</p><p class="text-sm text-gray-600 mt-2">ECHO, EU, GFFO, BMZ, USAID, UNICEF, AECID and others.</p></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="section-card p-6">
+        <h3 class="text-2xl font-extrabold text-primary-red mb-5">Donor & Institutional Exposure</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 bg-gray-100 rounded-full font-bold">ECHO</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">European Union</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">GFFO</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">BMZ</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">USAID</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">UNICEF</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">AECID</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">ADA</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">Neighbour in Need</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">EU Trust Funds</span><span class="px-4 py-2 bg-gray-100 rounded-full font-bold">Stichting Vluchteling</span>
+        </div>
+      </div>
+      <div class="section-card p-6">
+        <h3 class="text-2xl font-extrabold text-primary-red mb-5">Humanitarian Management Themes</h3>
+        <div class="grid sm:grid-cols-2 gap-3 text-gray-700 font-semibold">
+          <p>• Budget monitoring & forecasting</p><p>• Donor compliance</p><p>• Financial reporting</p><p>• Audit preparedness</p><p>• CVA operations</p><p>• Partner capacity strengthening</p><p>• Field coordination</p><p>• Procurement & logistics follow-up</p><p>• HR/admin oversight</p><p>• Programme indicator monitoring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="mb-14">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-12">Skills & Competencies</h2>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="section-card p-7">
+        <h3 class="text-2xl font-extrabold text-primary-red mb-5 text-center">Language Proficiency</h3>
+        <div class="chart-container"><canvas id="languageChart"></canvas></div>
+      </div>
+      <div class="space-y-8">
+        <div class="section-card p-7">
+          <h3 class="text-2xl font-extrabold text-primary-red mb-5">Finance, Compliance & Operations</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li><strong>Humanitarian finance:</strong> budget monitoring, forecasting, BFU, treasury, cost allocation, liquidity planning, financial reporting and audit readiness.</li>
+            <li><strong>Donor compliance:</strong> ECHO/EU procedures, institutional donor documentation, supporting evidence, expenditure verification and closure.</li>
+            <li><strong>Operations:</strong> HR/admin oversight, procurement follow-up, partner finance support, branch coordination and implementation support.</li>
+            <li><strong>CVA:</strong> RedRose deployment, volunteer training, distribution support and vulnerability-based targeting.</li>
+          </ul>
+        </div>
+        <div class="section-card p-7">
+          <h3 class="text-2xl font-extrabold text-primary-red mb-5">Digital & Analytical Skills</h3>
+          <ul class="grid sm:grid-cols-2 gap-3 text-gray-700 font-medium">
+            <li>• Power BI — PL-300 in progress</li><li>• Advanced Excel — MOS-211 in progress</li><li>• Dynamics 365 exposure</li><li>• Agresso / Odoo / FundsPro</li><li>• RedRose CVA platform</li><li>• Reporting automation mindset</li><li>• Data visualization</li><li>• Office 365</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="mb-14">
+    <h2 class="text-4xl font-black text-center text-primary-red mb-12">Education & Key Training</h2>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="section-card p-7">
+        <h3 class="font-extrabold text-2xl mb-5 text-primary-red border-b-2 border-gray-900 pb-3">Formal Education</h3>
+        <ul class="space-y-5 text-gray-700">
+          <li><p class="font-bold text-gray-900">MA Innovation and Knowledge Management</p><p>Complutense University of Madrid</p></li>
+          <li><p class="font-bold text-gray-900">MA International Business Administration</p><p>Economic & Commercial Center (CECO)</p></li>
+          <li><p class="font-bold text-gray-900">Postgraduate in Food Security Programme Management</p><p>Universitat Oberta de Catalunya - UN Food and Agriculture Organization</p></li>
+          <li><p class="font-bold text-gray-900">Bachelor of Economics</p><p>Complutense University of Madrid — International Economics & Development</p></li>
+        </ul>
+      </div>
+      <div class="section-card p-7">
+        <h3 class="font-extrabold text-2xl mb-5 text-primary-red border-b-2 border-gray-900 pb-3">Specialized Training</h3>
+        <ul class="space-y-5 text-gray-700">
+          <li><p class="font-bold text-gray-900">HEAT Security Training</p><p>Norwegian Refugee Council, Oslo — August 2022</p></li>
+          <li><p class="font-bold text-gray-900">Practical Emergency Cash Transfer (PECT)</p><p>IFRC — Summer 2023</p></li>
+          <li><p class="font-bold text-gray-900">Cash-Based Interventions Course</p><p>NOHA & Action Against Hunger — 2017</p></li>
+          <li><p class="font-bold text-gray-900">IFRC Livelihoods Centre Trainings</p><p>Livelihood programming, CVA, emergency/recovery livelihoods assessment, market network evaluation.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="bg-primary-red text-white">
+  <div class="container mx-auto px-6 py-10 text-center">
+    <h2 class="text-3xl font-black mb-3">Get In Touch</h2>
+    <p class="mb-6 text-red-50">Available for senior humanitarian finance, operations, CVA and programme support roles.</p>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-semibold">
+      <a href="mailto:edebustos@duck.com" class="hover:text-gray-900 transition">edebustos@duck.com</a><span class="hidden md:block">•</span>
+      <a href="https://www.linkedin.com/in/ernesto-de-bustos-136662233/" target="_blank" rel="noopener" class="hover:text-gray-900 transition">LinkedIn</a><span class="hidden md:block">•</span>
+      <a href="https://github.com/edebustos" target="_blank" rel="noopener" class="hover:text-gray-900 transition">GitHub</a><span class="hidden md:block">•</span><p>(+34) 692793157</p>
+    </div>
+  </div>
+</footer>
+
+<div id="cover-letter-modal" class="modal hidden">
+  <div class="modal-content text-gray-800">
+    <span class="close-button" id="close-cover-letter-modal">&times;</span>
+    <h2 class="text-3xl font-black text-primary-red mb-6 text-center">Professional Approach</h2>
+    <div class="space-y-4 leading-relaxed text-gray-700">
+      <p>I bring a finance-and-operations profile shaped by field realities: liquidity constraints, documentation pressure, donor deadlines, branch-level capacity gaps, emergency implementation and the need to translate complex budgets into decisions that programme teams can actually use.</p>
+      <p>My strongest contribution is the ability to connect financial control with operational delivery. I understand budgets, but also procurement bottlenecks, volunteer mobilisation, partner constraints, supporting documentation, programme indicators, donor compliance and the practical pressure of keeping activities moving in unstable environments.</p>
+      <p>I am particularly interested in roles where humanitarian finance is not treated as a back-office function, but as a management tool for quality implementation, accountability and strategic decision-making.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+  const modal = document.getElementById('cover-letter-modal');
+  document.getElementById('open-cover-letter-modal').addEventListener('click', () => modal.classList.remove('hidden'));
+  document.getElementById('close-cover-letter-modal').addEventListener('click', () => modal.classList.add('hidden'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+  new Chart(document.getElementById('languageChart').getContext('2d'), {
+    type: 'bar',
+    data: { labels: ['Spanish', 'English', 'Russian', 'Arabic'], datasets: [{ data: [6,5,3,2], backgroundColor: ['#E03131','#E03131','#F4A3A3','#FADCDC'], borderColor: ['#C82D2D','#C82D2D','#E03131','#F4A3A3'], borderWidth: 1 }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ({6:'C2 / Native',5:'C1 / Proficient',4:'B2',3:'B1 / Independent',2:'A2 / Basic',1:'A1'}[c.parsed.x]) } } }, scales: { x: { beginAtZero: true, max: 6, ticks: { callback: v => ({0:'A0',1:'A1',2:'A2',3:'B1',4:'B2',5:'C1',6:'C2'}[v]) } } } }
+  });
+</script>
+</body>
+</html>

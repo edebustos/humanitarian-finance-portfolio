@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI | Ernesto de Bustos</title>
+  <meta name="description" content="Power BI humanitarian analytics portfolio pack with screenshots, synthetic data, DAX and model documentation." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1f2937; }
+    .bg-primary-red { background-color: #E03131; }
+    .text-primary-red { color: #E03131; }
+    .border-primary-red { border-color: #E03131; }
+    .hover\:bg-primary-red-dark:hover { background-color: #C82D2D; }
+    .section-card { background: #fff; border-radius: .75rem; box-shadow: 0 10px 25px rgba(15,23,42,.08); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="bg-primary-red text-white shadow-lg sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="../index.html" class="text-xl md:text-2xl font-extrabold tracking-wide">Ernesto de Bustos</a>
+    <div class="hidden md:flex gap-5 lg:gap-7 text-sm font-semibold"><a href="profile.html" class="hover:text-gray-900 transition">Profile & Experience</a><a href="dashboard.html" class="hover:text-gray-900 transition">Dashboard</a><a href="powerbi.html" class="text-gray-900">Power BI</a><a href="projects.html" class="hover:text-gray-900 transition">Projects</a><a href="#contact" class="hover:text-gray-900 transition">Contact</a></div>
+    <button id="mobile-menu-button" class="md:hidden text-3xl leading-none font-bold" aria-label="Open mobile menu">☰</button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-primary-red px-6 pb-4 space-y-2 font-semibold"><a href="profile.html" class="block py-2">Profile & Experience</a><a href="dashboard.html" class="block py-2">Dashboard</a><a href="powerbi.html" class="block py-2">Power BI</a><a href="projects.html" class="block py-2">Projects</a><a href="#contact" class="block py-2">Contact</a></div>
+</header>
+
+<main class="container mx-auto px-6 py-12 max-w-7xl">
+  <section class="mb-10 text-center">
+    <p class="uppercase tracking-[.25em] text-primary-red font-extrabold text-sm mb-4">Power BI Portfolio Pack</p>
+    <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Humanitarian Analytics Evidence</h1>
+    <p class="text-gray-700 max-w-4xl mx-auto">Power BI dashboard using synthetic humanitarian datasets inspired by finance, CVA and donor environments. The pack is designed for quick recruiter review and deeper technical inspection.</p>
+  </section>
+
+  <section class="section-card p-6 md:p-8 mb-10 border-t-4 border-primary-red">
+    <img src="../assets/screenshots/powerbi_preview.png" alt="Power BI humanitarian analytics preview" class="w-full rounded-lg border border-gray-200 bg-gray-50 object-cover shadow-sm" loading="lazy">
+  </section>
+
+  <section class="grid md:grid-cols-3 gap-6 mb-10">
+    <article class="section-card p-6"><img src="../assets/screenshots/powerbi_burn_rate.png" alt="Power BI burn rate dashboard screenshot" class="rounded-lg border border-gray-200 mb-4" loading="lazy"><h2 class="text-xl font-black text-primary-red mb-2">Burn Rate</h2><p class="text-gray-700">Budget monitoring and expenditure pacing for donor-funded humanitarian portfolios.</p></article>
+    <article class="section-card p-6"><img src="../assets/screenshots/powerbi_donors.png" alt="Power BI donor dashboard screenshot" class="rounded-lg border border-gray-200 mb-4" loading="lazy"><h2 class="text-xl font-black text-primary-red mb-2">Donor Exposure</h2><p class="text-gray-700">Donor compliance, funding mix and reporting logic across institutional frameworks.</p></article>
+    <article class="section-card p-6"><img src="../assets/screenshots/powerbi_cva_operations.png" alt="Power BI CVA operations dashboard screenshot" class="rounded-lg border border-gray-200 mb-4" loading="lazy"><h2 class="text-xl font-black text-primary-red mb-2">CVA Operations</h2><p class="text-gray-700">Cash and voucher assistance monitoring connected to operational delivery.</p></article>
+  </section>
+
+  <section class="grid lg:grid-cols-2 gap-6">
+    <div class="section-card p-7">
+      <h2 class="text-2xl font-black text-primary-red mb-4">Reviewable Assets</h2>
+      <ul class="space-y-3 text-gray-700 font-medium">
+        <li>• Power BI portfolio documentation</li>
+        <li>• DAX measures</li>
+        <li>• Modeling instructions</li>
+        <li>• Dashboard wireframe</li>
+        <li>• Sample PBIX file</li>
+      </ul>
+    </div>
+    <div class="section-card p-7">
+      <h2 class="text-2xl font-black text-primary-red mb-4">Synthetic Dataset Pack</h2>
+      <ul class="grid sm:grid-cols-2 gap-3 text-gray-700 font-medium">
+        <li>• Finance fact table</li>
+        <li>• Projects dimension</li>
+        <li>• Donors dimension</li>
+        <li>• Locations dimension</li>
+        <li>• Budget lines dimension</li>
+        <li>• Beneficiaries dimension</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="bg-primary-red text-white"><div class="container mx-auto px-6 py-10 text-center"><h2 class="text-3xl font-black mb-3">Get In Touch</h2><p class="mb-6 text-red-50">Available for senior humanitarian finance, operations, CVA and programme support roles.</p><div class="flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-semibold"><a href="mailto:edebustos@duck.com" class="hover:text-gray-900 transition">edebustos@duck.com</a><span class="hidden md:block">•</span><a href="https://www.linkedin.com/in/ernesto-de-bustos-136662233/" target="_blank" rel="noopener" class="hover:text-gray-900 transition">LinkedIn</a><span class="hidden md:block">•</span><a href="https://github.com/edebustos" target="_blank" rel="noopener" class="hover:text-gray-900 transition">GitHub</a><span class="hidden md:block">•</span><p>(+34) 692793157</p></div></div></footer>
+<script>document.getElementById('mobile-menu-button').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));</script>
+</body>
+</html>
